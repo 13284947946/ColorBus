@@ -1,0 +1,4 @@
+<!--pages/test/index.wxml-->
+<cu-custom bgColor="bg-white">
+  <view slot="content">测试</view>
+</cu-custom>

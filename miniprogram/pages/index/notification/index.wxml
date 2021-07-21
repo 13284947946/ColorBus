@@ -1,0 +1,27 @@
+<!--pages/index/notification/index.wxml-->
+<cu-custom bgColor="bg-gradual-yao" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">校车通知</view>
+</cu-custom>
+<view class="cu-card article" wx:for="{{5}}" wx:key="index">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">校车安排通知</view>
+    </view>
+    <view class="content">
+      <image src="https://636c-cloud1-6g4mb3me43bc23c2-1304961616.tcb.qcloud.la/ColorBus/swipers/swiper-2.jpg?sign=691b4a2d3325c3639de4a3a34e54920d&t=1623223921" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-sm text-grey">
+          <view>明日校车正常运行</view>
+          <view>南校No.15暂停运营</view>
+        </view>
+        <view class="text-right">
+          <view class="cu-capsule round">
+            <view class="cu-tag bg-cyan light">校车安排</view>
+            <view class="cu-tag line-cyan">5月{{index + 1}}日</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

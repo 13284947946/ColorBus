@@ -1,0 +1,13 @@
+<cu-custom bgColor="bg-gradual-yao" isBack="{{false}}">
+  <view slot="content">地图</view>
+</cu-custom>
+
+<view class="map" style="width: 100%; height: 100%;">
+  <map
+    id="map"
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    subkey="{{key}}"
+    markers="{{markers}}">
+  </map>
+</view>
