@@ -1,0 +1,26 @@
+<!--pages/index/setttings/index.wxml-->
+<cu-custom bgColor="bg-gradual-yao" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">设置</view>
+</cu-custom>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-notification text-red"></text>
+        <text class="text-grey">消息通知</text>
+      </view>
+      <view class="action">
+        <switch class="cu-switch"></switch>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-location text-black"></text>
+        <text class="text-grey">位置权限</text>
+      </view>
+      <view class="action">
+        <switch class="cu-switch"></switch>
+      </view>
+    </view>
+  </view>

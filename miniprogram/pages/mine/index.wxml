@@ -1,0 +1,60 @@
+<cu-custom bgColor="bg-gradual-yao" isBack="{{false}}">
+  <view slot="content">个人中心</view>
+</cu-custom>
+<view class="flex margin-top-xl">
+  <view class="flex-sub text-center margin-top-xl">
+    <view class="cu-avatar round xl margin-xl" style="background-image: url(https://636c-cloud1-6g4mb3me43bc23c2-1304961616.tcb.qcloud.la/ColorBus/head/IMG_0510.JPG?sign=d9cc843ade2c1328a770248a6691dd08&t=1623223130)"></view>
+  </view>
+</view>
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-my text-black"></text>
+        <text class="text-grey">用户名</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-bold">Mr.Yao</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-time text-black"></text>
+        <text class="text-grey">注册时间</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-bold">2021-05-29</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red  margin-right-xs"></text>
+        <text class="text-grey">标签</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">音乐</view>
+        <view class="cu-tag round bg-olive light">电影</view>
+        <view class="cu-tag round bg-blue light">旅行</view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content" bindtap="showQrcode">
+        <text class="cuIcon-refund text-red"></text>
+        <text class="text-grey">卡里余额</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-bold">￥50.0</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode">
+        <text class="cuIcon-qrcode text-red"></text>
+        <text class="text-grey">乘车码</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <button class="content cu-btn" open-type="feedback">
+        <text class="cuIcon-service text-red"></text>
+        <text class="text-grey">Issue</text>
+      </button>
+    </view>
+  </view>
