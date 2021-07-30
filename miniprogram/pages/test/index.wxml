@@ -2,3 +2,5 @@
 <cu-custom bgColor="bg-white">
   <view slot="content">测试</view>
 </cu-custom>
+
+<button bindtap="onGetUserProfile">登录</button>

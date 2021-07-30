@@ -3,9 +3,12 @@
 </cu-custom>
 <view class="flex margin-top-xl">
   <view class="flex-sub text-center margin-top-xl">
-    <view class="cu-avatar round xl margin-xl" style="background-image: url(https://636c-cloud1-6g4mb3me43bc23c2-1304961616.tcb.qcloud.la/ColorBus/head/IMG_0510.JPG?sign=d9cc843ade2c1328a770248a6691dd08&t=1623223130)"></view>
+    <view bindtap="onClickLogin" class="cu-avatar round xl margin-xl" style="background-image: url({{!isLogin?'':userInfo.avatarUrl}})">
+      <text wx:if="{{!isLogin}}" class="avatar-text">请登录</text>
+    </view>
   </view>
 </view>
+<text></text>
 <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item">
       <view class="content">
@@ -13,7 +16,7 @@
         <text class="text-grey">用户名</text>
       </view>
       <view class="action">
-        <text class="text-grey text-bold">Mr.Yao</text>
+        <text class="text-grey text-bold">{{!isLogin?'':userInfo.nickName}}</text>
       </view>
     </view>
     <view class="cu-item">

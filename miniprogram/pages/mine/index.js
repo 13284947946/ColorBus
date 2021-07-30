@@ -1,16 +1,46 @@
 // pages/auth/index.js
+const util = require('../../utils/utils.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {},
+    isLogin: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  onClickLogin: util.throttle(function(event) {
+    let that = this;
+    if(!this.data.isLogin) {
+      wx.getSetting({
+        success(res) {
+          if(res.authSetting['scope.userInfo']) {
+            wx.getUserProfile({
+              desc: 'desc',
+              success(data) {
+                console.log(data.userInfo);
+                that.setData({
+                  userInfo: data.userInfo,
+                  isLogin: true
+                })
+              },
+              fail() {
+                wx.showToast({
+                  title: '取消授权',
+                  icon: 'none',
+                  duration: 1500
+                })
+              }
+            })
+          }
+        }
+      });
+    }
+  }),
   onLoad: function() {
     
   },
