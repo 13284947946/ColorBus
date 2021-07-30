@@ -1,6 +1,9 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.cloud.init({
+      env: 'cloud1-6g4mb3me43bc23c2'
+    })
     wx.getSystemInfo({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;
