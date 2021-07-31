@@ -13,7 +13,7 @@ App({
       }
     })
     // 检查过期
-    console.log("检查Storage是否过期");
+    // console.log("检查Storage是否过期");
     this.checkStorage();
   },
   checkStorage() {
