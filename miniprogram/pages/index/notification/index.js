@@ -96,15 +96,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-<<<<<<< HEAD
-
-=======
     if (true)//判断是否有未读消息
     {
       return;
     }
     this.setData({ hadRed: true });
->>>>>>> master_qf
   },
 
   /**

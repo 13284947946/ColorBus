@@ -44,22 +44,13 @@
           <view>南校No.15暂停运营</view>
         </view>
         <view class="text-right">
-<<<<<<< HEAD
-          <view class="cu-capsule round">
-=======
           <view class="cu-capsule round ">
->>>>>>> master_qf
             <view class="cu-tag bg-cyan light">校车安排</view>
             <view class="cu-tag line-cyan">5月{{index + 1}}日</view>
           </view>
         </view>
       </view>
     </view>
-<<<<<<< HEAD
-  </view>
-</view>
-=======
-
   </view>
   </view>
   </view>
@@ -93,4 +84,3 @@
 </view>
 
 
->>>>>>> master_qf

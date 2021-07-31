@@ -1,26 +1,18 @@
 // pages/auth/index.js
-<<<<<<< HEAD
 const util = require('../../utils/utils.js');
 const app = getApp();
-=======
->>>>>>> master_qf
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
     userInfo: null,
-=======
-
->>>>>>> master_qf
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-<<<<<<< HEAD
   checkRegister: function(userInfo) {
     wx.cloud.callFunction({
       name: 'get_setUserInfo',
@@ -88,20 +80,12 @@ Page({
         userInfo
       })
     }
-=======
-  onLoad: function() {
-    
->>>>>>> master_qf
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-<<<<<<< HEAD
     
-=======
-
->>>>>>> master_qf
   },
 
   /**
