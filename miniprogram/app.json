@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/map/index",
+    "pages/talk/index",
+    "pages/mine/index",
+    "pages/index/notification/index",
+    "pages/index/help/index",
+    "pages/index/setttings/index",
+    "pages/index/bus/index"
+  ],
+  "window": {
+    "backgroundColor": "#ffffff",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "colorui/components/cu-custom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置信息"
+    }
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页"
+    }, {
+      "pagePath": "pages/map/index",
+      "text": "地图"
+    }, {
+      "pagePath": "pages/mine/index",
+      "text": "我"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

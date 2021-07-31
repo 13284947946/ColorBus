@@ -1,0 +1,87 @@
+<!--pages/index/notification/index.wxml-->
+<cu-custom bgColor="bg-gradual-yao" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">校车通知</view>
+</cu-custom>
+
+<view class="cu-bar bg-cyan light search">
+    <view class="search-form radius">
+      <text class="cuIcon-search"></text>
+      <input blur="InputBlur" djust-position="false" type="text" placeholder="搜索校车通知" confirm-type="search"></input>
+  </view>
+</view>
+<view class="cu-btn flex ">
+  <button class="cu-btn flex-sub bg-blue padding-sm margin-xs radius" bindtap="red" disabled="{{hadRed}}" type=""><text class="{{hadRed==true?'cuIcon-squarecheck':'cuIcon-comment'}}" ></text>一键已读</button>
+  <button class="cu-btn flex-sub bg-blue padding-sm margin-xs radius" bindtap="deleted">
+    <view wx:if="{{!hadDeleted}}">
+      <text class="cuIcon-delete">管理消息</text>
+    </view>
+    <view wx:if="{{hadDeleted}}">
+      <text class="cuIcon-check">完成</text>
+    </view>
+  </button>
+</view>
+
+
+
+
+<view class="cu-card article" wx:for="{{items}}" wx:key="{{index}}" data-id="{{item.id}}" >
+  <view class="cu-item shadow">
+  <view class="flex justify-start  align-center">
+  <view wx:if="{{hadDeleted}}">
+      <checkbox checked="{{hadchecked}}"  value="{{item.id}}" data-id="{{item.id}}"  bindtap="select"></checkbox>
+  </view>
+  
+  <view class="cu-item shadow basis-df">
+        <view class="title">
+      <view class="text-cut">校车安排通知</view>
+    </view>
+    <view class="content">
+      <image src="https://636c-cloud1-6g4mb3me43bc23c2-1304961616.tcb.qcloud.la/ColorBus/swipers/swiper-2.jpg?sign=691b4a2d3325c3639de4a3a34e54920d&t=1623223921" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-sm text-grey">
+          <view>明日校车正常运行</view>
+          <view>南校No.15暂停运营</view>
+        </view>
+        <view class="text-right">
+          <view class="cu-capsule round ">
+            <view class="cu-tag bg-cyan light">校车安排</view>
+            <view class="cu-tag line-cyan">5月{{index + 1}}日</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  </view>
+  </view>
+</view>
+<view wx:if="{{hadDeleted}}" class="radius fl padding-xl"></view>
+
+
+<view class='bottom flex_between' wx:if="{{hadDeleted}}">
+  <view class='left flex_start'>
+    <block wx:if="{{select_all}}">
+      <view bindtap='select_none' class='flex_start'>
+        <view class='cuIcon-squarecheck bg-green'>
+        </view>
+        <view>
+          取消全选
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{!select_all}}">
+      <view bindtap='select_all' class='flex_start'>
+        <view class='cuIcon-square'>全选
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='right flex_end'>
+    <button bindtap='deleteitem' class='sure' disabled="{{false}}" type="">
+      删除
+    </button>
+  </view>
+</view>
+
+

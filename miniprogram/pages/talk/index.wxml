@@ -1,0 +1,33 @@
+<cu-custom bgColor="bg-gradual-yao" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">聊天</view></cu-custom>
+<view class="cu-chat">
+  <view class="cu-item self">
+    <view class="main">
+      <view class="content bg-green shadow">
+        <text>喵喵喵！喵喵喵！喵喵喵！喵喵！喵喵！！喵！喵喵喵！</text>
+      </view>
+    </view>
+    <view class="cu-avatar radius" style="background-image:url(https://636c-cloud1-6g4mb3me43bc23c2-1304961616.tcb.qcloud.la/ColorBus/head/IMG_0510.JPG?sign=d9cc843ade2c1328a770248a6691dd08&t=1623223130);"></view>
+    <view class="date">2021年5月8日 13:23</view>
+  </view>
+  <view class="cu-item">
+    <view class="cu-avatar radius" style="background-image:url(https://636c-cloud1-6g4mb3me43bc23c2-1304961616.tcb.qcloud.la/ColorBus/head/IMG_0510.JPG?sign=d9cc843ade2c1328a770248a6691dd08&t=1623223130);"></view>
+    <view class="main">
+      <view class="content bg-white shadow">
+        <text>喵喵喵！喵喵喵！喵喵喵！</text>
+      </view>
+    </view>
+    <view class="date">2021年5月8日 13:23</view>
+  </view>
+</view>
+
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <view class="action">
+    <text class="cuIcon-sound text-grey"></text>
+  </view>
+  <input class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10"/>
+  <view class="action">
+    <text class="cuIcon-emojifill text-grey"></text>
+  </view>
+  <button class="cu-btn bg-green shadow">发送</button>
+  
+</view>

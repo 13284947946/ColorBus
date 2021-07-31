@@ -1,0 +1,3 @@
+.screen-swiper {
+  height: 500rpx !important;
+}

@@ -1,0 +1,72 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/map/index",
+          "pathName": "pages/map/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/talk/index",
+          "pathName": "pages/talk/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/test/index",
+          "pathName": "pages/test/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/index",
+          "pathName": "pages/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "校车信息",
+          "pathName": "pages/index/bus/index",
+          "query": "busNumber=12",
+          "scene": null
+        },
+        {
+          "name": "测试代码",
+          "pathName": "pages/test/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "校车通知",
+          "pathName": "pages/index/notification/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "反馈",
+          "pathName": "pages/index/help/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置",
+          "pathName": "pages/index/setttings/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!--pages/index/list/index.wxml-->
+<cu-custom bgColor="bg-gradual-yao" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">反馈问题</view>
+</cu-custom>
+<view class="margin-xs">
+  <form>
+    <view class="cu-form-group">
+      <view class="title">昵称：</view>
+      <input placeholder="您的名字" name="name"/>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">电话：</view>
+      <input placeholder="您的电话" name="mobile"/>
+      <view class="cu-capsule radius">
+					<view class='cu-tag bg-blue '>
+						+86
+					</view>
+					<view class="cu-tag line-blue">
+						中国大陆
+					</view>
+				</view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">微信号：</view>
+      <input placeholder="您的微信号"/>
+    </view>
+    <view class="cu-form-group">
+      <textarea maxlength="-1" input="textareaAInput" placeholder="问题描述"></textarea>
+    </view>
+    <view class="flex justify-around">
+      <view class="flex-sub">
+        <button class="cu-btn lines-gray margin block round">重置</button>
+      </view>
+      <view class="flex-sub">
+        <button class="cu-btn lines-green margin block round">提交</button>
+      </view>
+    </view>
+  </form>
+</view>
