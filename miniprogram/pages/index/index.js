@@ -36,7 +36,7 @@ Page({
     gridCol:3,
     gridBorder: true
   },
-  setProfile() {
+  setProfile: function() {
     wx.getUserProfile({
       desc: '授权用户信息，用于登录',
       success(data) {
@@ -74,7 +74,7 @@ Page({
       }
     })
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     let that = this;
     const { userInfo } = app.globalData;
     if(!userInfo) {

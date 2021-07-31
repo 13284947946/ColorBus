@@ -13,56 +13,6 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  setProfile() {
-    wx.getUserProfile({
-      desc: '授权用户信息，用于登录',
-      success(data) {
-        app.globalData.userInfo = data.userInfo;
-        const item = {
-          userInfo: data.userInfo,
-          expires_time: (new Date()).getTime()
-        };
-        wx.setStorageSync('app_data', item);
-        // console.log(data.userInfo);
-      },
-      fail() {
-        // console.log(data.errMsg);
-      }
-    })
-  },
-  onClickLogin: util.throttle(function(event) {
-    let that = this;
-    const { userInfo } = app.globalData;
-    if(userInfo) {
-      // console.log("已经有信息");
-      this.setData({
-        userInfo
-      })
-    } else {
-      // 获取登录信息
-      that.setProfile();
-      that.checkRegister();
-    }
-    console.log(app.globalData.userInfo)
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
-  }),
-  onLoad: function() {
-    let that = this;
-    const { userInfo } = app.globalData;
-    // console.log(111111, userInfo);
-    if(userInfo) {
-      // 已经有信息
-      that.checkRegister(userInfo);
-      that.setData({
-        userInfo
-      })
-    }
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   checkRegister: function(userInfo) {
     wx.cloud.callFunction({
       name: 'get_setUserInfo',
@@ -84,6 +34,56 @@ Page({
       }
     })
   },
+  setProfile: function() {
+    let that = this;
+    return new Promise((resolve, reject) => {
+      wx.getUserProfile({
+        desc: '授权用户信息，用于登录',
+        success(data) {
+          app.globalData.userInfo = data.userInfo;
+          const item = {
+            userInfo: data.userInfo,
+            expires_time: (new Date()).getTime()
+          };
+          wx.setStorageSync('app_data', item);
+          // 云端是否注册
+          that.onClickLogin(data.userInfo);
+          resolve();
+        },
+        fail() {
+          console.log(data.errMsg);
+          reject();
+        }
+      })
+    });
+  },
+  onClickLogin: util.throttle(function(event) {
+    let that = this;
+    const { userInfo } = app.globalData;
+    if(!userInfo) {
+      // 获取登录信息
+      that.setProfile(userInfo).then(() => {
+        // console.log(app.globalData.userInfo)
+        that.setData({
+          userInfo: app.globalData.userInfo
+        })
+      })
+    }
+  }),
+  onLoad: function() {
+    let that = this;
+    const { userInfo } = app.globalData;
+    // console.log(111111, userInfo);
+    if(userInfo) {
+      // 已经有信息
+      that.setData({
+        userInfo
+      })
+    }
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
   onReady: function () {
     
   },
