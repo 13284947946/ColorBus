@@ -2,6 +2,7 @@
 App({
   onLaunch: function () {
     wx.cloud.init({
+      // 环境ID 在云开发设置那里复制一下
       env: 'cloud1-6g4mb3me43bc23c2'
     })
     wx.getSystemInfo({
