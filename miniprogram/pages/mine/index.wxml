@@ -3,8 +3,8 @@
 </cu-custom>
 <view class="flex margin-top-xl">
   <view class="flex-sub text-center margin-top-xl">
-    <view bindtap="onClickLogin" class="cu-avatar round xl margin-xl" style="background-image: url({{!isLogin?'':userInfo.avatarUrl}})">
-      <text wx:if="{{!isLogin}}" class="avatar-text">请登录</text>
+    <view bindtap="onClickLogin" class="cu-avatar round xl margin-xl" style="background-image: url({{userInfo ? userInfo.avatarUrl: ''}})">
+      <text wx:if="{{!userInfo}}" class="avatar-text">请登录</text>
     </view>
   </view>
 </view>
@@ -16,7 +16,7 @@
         <text class="text-grey">用户名</text>
       </view>
       <view class="action">
-        <text class="text-grey text-bold">{{!isLogin?'':userInfo.nickName}}</text>
+        <text class="text-grey text-bold">{{userInfo ? userInfo.nickName: ''}}</text>
       </view>
     </view>
     <view class="cu-item">
