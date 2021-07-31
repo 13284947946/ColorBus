@@ -4,7 +4,7 @@ const md5 = require('md5-node')
 //cloud.init()
 cloud.init({
   traceUser: true,
-  env: 'winbin-2hand'
+  env: 'cloud1-6g4mb3me43bc23c2'
 })
 const db = cloud.database()
 const usersTable = db.collection("users")
