@@ -29,7 +29,7 @@ Page({
   },
   onLoad: function (options) {
     let that = this;
-    const { userInfo } = wx.getStorageSync('app_data');
+    const { userInfo } = app.globalData;
     if(!userInfo) {
       wx.showModal({
         title: '提示',
@@ -39,12 +39,37 @@ Page({
           if(res.confirm) {
             // console.log("点击了确定");
             that.setProfile();
+            
           } else {
             // console.log("点击了取消");
           }
         }
       })
+    } else {
+      // 已经有信息
+      that.checkRegister(userInfo);
     }
+  },
+  checkRegister: function(userInfo) {
+    wx.cloud.callFunction({
+      name: 'get_setUserInfo',
+      data: {
+        getSelf: true
+      }
+    }).then((res) => {
+      // console.log(res.result);
+      if(!res.result?.data) {
+        wx.cloud.callFunction({
+          name: 'get_setUserInfo',
+          data: {
+            setSelf: true,
+            userData: userInfo
+          }
+        })
+      } else {
+        // console.log("已经注册")
+      }
+    })
   },
   onGetUserProfile: function(event) {
     let that = this;
