@@ -65,6 +65,12 @@
           "pathName": "pages/index/setttings/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "Home",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
